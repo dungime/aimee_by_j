@@ -1,7 +1,11 @@
 /dist
 .env
+.env.*
+!.env.template
+!.env.example
 .DS_Store
 /uploads
+/static
 /node_modules
 yarn-error.log
 

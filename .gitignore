@@ -32,12 +32,11 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Local env files
+# Local env files — never commit real secrets. Keep *.template / *.example only.
 **/.env
-**/.env.local
-**/.env.development.local
-**/.env.test.local
-**/.env.production.local
+**/.env.*
+!**/.env.template
+!**/.env.example
 
 # Turbo
 .turbo
@@ -55,3 +54,11 @@ yarn-error.log*
 ehthumbs.db
 Thumbs.db
 **/.DS_Store
+
+# Stray lockfiles — this repo uses npm (package-lock.json)
+**/pnpm-lock.yaml
+**/yarn.lock
+
+# Medusa local file uploads / generated media
+apps/backend/static/
+apps/backend/uploads/

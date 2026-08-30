@@ -94,6 +94,17 @@ export default function ProductActions({
 
   // check if the selected variant is in stock
   const inStock = useMemo(() => {
+    // Debug logging
+    if (selectedVariant) {
+      console.log("Variant Debug:", {
+        id: selectedVariant.id,
+        manage_inventory: selectedVariant.manage_inventory,
+        allow_backorder: selectedVariant.allow_backorder,
+        inventory_quantity: selectedVariant.inventory_quantity,
+        total_managed_quantity: (selectedVariant as any).total_managed_quantity,
+      })
+    }
+
     // If we don't manage inventory, we can always add to cart
     if (selectedVariant && !selectedVariant.manage_inventory) {
       return true

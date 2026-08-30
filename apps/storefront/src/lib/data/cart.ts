@@ -137,6 +137,13 @@ export async function addToCart({
     ...(await getAuthHeaders()),
   }
 
+  console.log("Adding to cart:", {
+    cartId: cart.id,
+    variantId,
+    quantity,
+    headers,
+  })
+
   await sdk.store.cart
     .createLineItem(
       cart.id,

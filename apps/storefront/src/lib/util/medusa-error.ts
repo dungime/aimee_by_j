@@ -11,6 +11,10 @@ type MedusaError = {
 
 export default function medusaError(error: unknown): never {
   const err = error as MedusaError
+  
+  // Log the full error for debugging
+  console.error("Full error object:", error)
+  
   if (err.response) {
     const u = new URL(err.config?.url ?? "", err.config?.baseURL ?? "")
     console.error("Resource:", u.toString())
@@ -28,6 +32,8 @@ export default function medusaError(error: unknown): never {
   } else if (err.request) {
     throw new Error("No response received: " + String(err.request))
   } else {
-    throw new Error("Error setting up the request: " + err.message)
+    console.error("Error message:", err.message)
+    console.error("Error stack:", (error as any)?.stack)
+    throw new Error("Error setting up the request: " + (err.message || "An unknown error occurred."))
   }
 }
