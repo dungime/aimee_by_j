@@ -24,6 +24,9 @@ coverage
 **/build
 **/dist
 
+# TypeScript incremental build cache
+*.tsbuildinfo
+
 # Misc
 *.pem
 
@@ -55,8 +58,9 @@ ehthumbs.db
 Thumbs.db
 **/.DS_Store
 
-# Stray lockfiles — this repo uses npm (package-lock.json)
-**/pnpm-lock.yaml
+# This repo uses pnpm — keep pnpm-lock.yaml, ignore other package managers' lockfiles
+package-lock.json
+**/package-lock.json
 **/yarn.lock
 
 # Medusa local file uploads / generated media

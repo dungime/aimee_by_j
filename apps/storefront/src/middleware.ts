@@ -101,6 +101,12 @@ async function getCountryCode(
  * Middleware to handle region selection and onboarding status.
  */
 export async function middleware(request: NextRequest) {
+  // TODO(storefront rebuild): region/countryCode routing is disabled while the
+  // UI is rebuilt. Re-enable (remove this early return) once the new app
+  // structure decides how it handles regions. The helpers below are kept as a
+  // reference implementation.
+  return NextResponse.next()
+
   if (request.nextUrl.pathname.includes(".")) {
     return NextResponse.next()
   }
