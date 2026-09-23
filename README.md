@@ -34,7 +34,7 @@
 
 | Concern | Choice | Notes |
 |---|---|---|
-| Framework | **Next.js 15** — App Router | RSC/SSR for catalog & SEO pages |
+| Framework | **Next.js 16** — App Router | RSC/SSR for catalog & SEO pages |
 | UI runtime | **React 19** | |
 | Styling | **Tailwind CSS** (v4 planned) | zero-runtime, RSC-friendly |
 | Components | **shadcn/ui** + **lucide-react** | copy-in components, owned in-repo |
